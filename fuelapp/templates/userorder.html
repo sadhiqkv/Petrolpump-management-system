@@ -1,0 +1,112 @@
+{% extends 'base2.html' %}
+
+{% block title %}User Order{% endblock %}
+
+{% block content %}
+<style>
+    body{
+        background: #5bdb7b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #93aee9, #73cc5d);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #93aee9, #5fd15f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    h1{
+        font-family: sans-serif;
+        text-align: center;
+        color: rgb(46, 11, 141);
+    }
+</style>
+<body>
+    
+    <div class="container bg-light">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><br>
+                <h1>Order</h1>
+            </div>
+            <div class="col-md-4"></div>
+        </div> 
+        <form action="{% url 'addorder' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><br>
+                   
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" name="nms" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Phone_no</label>
+                <input type="text" name="phn" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="text"name="eml" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Machine Type</label>
+                <select class="form-control" name="sel">
+                  {% for Machine in Machines %} 
+                   <option value="{{ Machine.id }}">{{ Machine.machine_no}}</option>
+                  {% endfor %}
+               </select><br>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Company name</label>
+                <input type="text" name="cmp" class="form-control" placeholder="Enter Company">
+              </div>
+            <div class="col-md-12 text-center">
+            <button  type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <br><br>
+    </div> 
+</form><br><br><br>
+</div>
+</center>
+<footer style="margin-top:20%" class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+      ><i class="fa fa-facebook "></i
+    ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+      ><i class="fa fa-twitter"></i
+    ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+      ><i class="fa fa-google"></i
+    ></a>
+
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+      ><i class="fa fa-instagram"></i
+    ></a>
+
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Email:
+  <a class="text-white" href="#">Keralapetrolpump123@gmail.com</a><br>
+    Phone no:
+  <a class="text-white" href="#">+913466847767<br>+913456754524</a><br>
+  </div>
+  <!-- Copyright -->
+</footer>
+</body>
+</html>
+{% endblock %}

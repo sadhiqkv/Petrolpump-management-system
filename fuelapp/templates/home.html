@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>home page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  {% load static %}
+</head>
+<body style="background-color: black;">
+   
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <h5 style="font-size: 18px; margin-left: 10px; padding-top: 9px;"><span style="color: rgb(255, 255, 255);">PETROL</span><span style="color: blue; margin-left: 5px;">PUMP</span></h5></a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div style="margin-left: 10%;" class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'loginpage' %}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<img src="{% static 'images/petrol7.jpg' %}" width="100%" height="600px"><br><br><br>
+<div style="background-color:black;">
+<div class="container">
+<p id="p2" style="font-size: 40px; color: blue;" ><marquee><i><u>Welcome To Petrol Pump Management System</u></i></marquee></p>
+</div>
+<div class="container"><p style="font-size: 22px; color: aliceblue;">Petrol pump business has always been considered one of the leading profit making businesses, not just in India, but globally as well. This is largely because of the 
+  ever increasing growth and resultant demands of the transportation and logistics sector.  Another obvious reason being the growing demands of daily commute of the common man. Besides, in today’s day and age, 
+  it has almost become a nessacity for a middle class person to own a vehicle to ensure his comfort and convenience in day to day life.<br><br><br>
+
+  Therefore, opting to start your own petrol pump business is a feasible option in today’s times. Even though it demands a fair bit of legal obligations and paper work, it still stands to be amongst the most profit making businesses in India. Besides, 
+  the Oil Marketing Companies (OMCs) are aiming to generate more viable opportunities in order to encourage the growth of petrol pump business in India in 2020-2021.</p></div><br><br><br><br><br><br><br>
+
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+      ><i class="fa fa-facebook "></i
+    ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+      ><i class="fa fa-twitter"></i
+    ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+      ><i class="fa fa-google"></i
+    ></a>
+
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+      ><i class="fa fa-instagram"></i
+    ></a>
+
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Email:
+    <a class="text-white" href="#">Keralapetrolpump123@gmail.com</a><br>
+    Phone no:
+    <a class="text-white" href="#">+913466847767<br>+913456754524</a><br>
+  </div>
+  <!-- Copyright -->
+</footer>
+</div>
+</body>
+</html>

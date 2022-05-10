@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Login</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        background: #5bdb7b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #93aee9, #73cc5d);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #93aee9, #5fd15f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    h1{
+        font-family: sans-serif;
+        text-align: center;
+        color: rgb(39,168,168);
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <h5 style="font-size: 18px; margin-left: 10px; padding-top: 9px;"><span style="color: rgb(255, 255, 255);">Petrol</span><span style="color: blue; margin-left: 5px;">Pump</span></h5></a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div style="margin-left: 10%;" class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'loginpage' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      {% for message in messages%}
+<h5>
+    <div class="'alert alert-danger mt-5 text-align:center" style=" margin-left: 30%;">
+        {{ message }}
+    </div>
+</h5> 
+    {% endfor %}
+      <center>
+        <div style="margin-top:5%;" class="container bg-light">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><br>
+                    <h1>Login</h1>
+                </div>
+                <div class="col-md-4"></div>
+            </div> 
+            <form action="{% url 'user_login' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"><br>
+                       
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Username</label>
+                  <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">password</label>
+                  <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="enter  password">
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Log in</button>
+                <br><br>
+        </div> 
+    </form>
+    </center>  
+    <footer style="margin-top:20%" class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+          ><i class="fa fa-facebook "></i
+        ></a>
+    
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+          ><i class="fa fa-twitter"></i
+        ></a>
+    
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+          ><i class="fa fa-google"></i
+        ></a>
+  
+    
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+          ><i class="fa fa-instagram"></i
+        ></a>
+    
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        Email:
+      <a class="text-white" href="#">Keralapetrolpump123@gmail.com</a><br>
+        Phone no:
+      <a class="text-white" href="#">+913466847767<br>+913456754524</a><br>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+</body>
+</html>

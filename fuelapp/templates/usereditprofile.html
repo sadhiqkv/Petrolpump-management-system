@@ -1,0 +1,94 @@
+{% extends 'base2.html' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="container bg-light">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><br>
+                <h1>EDIT PROFILE</h1>
+            </div>
+            <div class="col-md-4"></div>
+        </div> 
+        <form action="/editprofile/{{pfs.id}}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><br>
+                   
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Phone_no</label>
+                <input type="number" name="phone5" class="form-control"  value="{{pfs.phone_no}}">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Place</label>
+                <input type="text" name="place5" class="form-control" value="{{pfs.place}}">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="text"name="email5" class="form-control" value="{{pfs.email}}">
+              </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Image</label>
+              <input type="file"name="file" class="form-control" value="{{user.profiles.image}}"  accept="image/*">
+            </div>
+            <div class="col-md-12 text-center">
+            <button  type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <input type="button" value="previous page" onclick="javascript:history.go(-1);">
+            <br><br>
+    </div> 
+</form><br><br><br>
+</div>
+</center>
+<footer style="margin-top:20%" class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+        ><i class="fa fa-facebook "></i
+      ></a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+        ><i class="fa fa-twitter"></i
+      ></a>
+  
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+        ><i class="fa fa-google"></i
+      ></a>
+  
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+        ><i class="fa fa-instagram"></i
+      ></a>
+  
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      Email:
+    <a class="text-white" href="#">Keralapetrolpump123@gmail.com</a><br>
+      Phone no:
+    <a class="text-white" href="#">+913466847767<br>+913456754524</a><br>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  </body>
+  </html>
+
+
+{% endblock %}

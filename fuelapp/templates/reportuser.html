@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}User Report{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<body style="background-color: antiquewhite;">
+    <div class='container-fluid'>
+        <table border="2px" style="margin-left: 200px; margin-top: 5%;" class="center">
+        <thead>
+            <tr>
+                <th>USER NAME</th>
+                <th>PHONE NO</th>
+                <th>PLACE</th>
+                <th>EMAIL ID</th>
+                <th>COMPANY NAME</th>
+                <th>PROFILE PHOTO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for PRO in prfs %}
+            <tr>
+                <td style="color: blue;">{{ PRO.name }}</td>
+                <td>{{ PRO.phone_no }}</td>
+                <td>{{ PRO.place }}</td>
+                <td>{{ PRO.email }}</td>
+                <td>{{ PRO.company.company }}</td>
+        {% if PRO.image == '/static/images/83.jpg' %}
+            <td>
+                <img src="{% static 'images/83.jpg' %}" width="50">
+            </td>
+        {% else %}
+             <td>
+                 <img src="{{ PRO.image.url }}" width="50">
+             </td>
+        {% endif %}
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+         </div>
+         <footer style="margin-top:20%" class="bg-dark text-center text-white">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+              ><i class="fa fa-facebook "></i
+            ></a>
+        
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+              ><i class="fa fa-twitter"></i
+            ></a>
+        
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+              ><i class="fa fa-google"></i
+            ></a>
+      
+        
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+              ><i class="fa fa-instagram"></i
+            ></a>
+        
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Email:
+          <a class="text-white" href="#">Keralapetrolpump123@gmail.com</a><br>
+            Phone no:
+          <a class="text-white" href="#">+913466847767<br>+913456754524</a><br>
+          </div>
+          <!-- Copyright -->
+        </footer>
+</body>
+</html>
+{% endblock %}

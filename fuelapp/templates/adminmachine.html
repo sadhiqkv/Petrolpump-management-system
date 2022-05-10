@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Machines{% endblock %}
+
+{% block content %}
+
+<body style="background-color: antiquewhite;">
+  <div class="container">
+    <h2 style="margin-top:5%;text-align: center;">ADD MACHINE</h2><br>
+   <form method="post" action="{% url 'add_machine' %}">
+    {% csrf_token %}
+          <input type="text" name="an" class='form-control' placeholder="Enter name"><br>
+          <input type="text" name="phone1" class='form-control'  placeholder="Enter phone no"><br>
+          <input type="text" name="email1" class='form-control' placeholder="Enter Email id"><br>
+          <input type="text" name="company1" class='form-control' placeholder="Enter Company name"><br>
+          <input type="text" name="machno" class='form-control' placeholder="Enter machine no"><br><br>
+            <button type="submit" class="btn btn-info w-100">Submit</button>
+</form>
+</div>
+<footer style="margin-top:20%" class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+      ><i class="fa fa-facebook "></i
+    ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+      ><i class="fa fa-twitter"></i
+    ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+      ><i class="fa fa-google"></i
+    ></a>
+
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+      ><i class="fa fa-instagram"></i
+    ></a>
+
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Email:
+  <a class="text-white" href="#">Keralapetrolpump123@gmail.com</a><br>
+    Phone no:
+  <a class="text-white" href="#">+913466847767<br>+913456754524</a><br>
+  </div>
+  <!-- Copyright -->
+</footer>
+</body>
+</html>
+{% endblock %}

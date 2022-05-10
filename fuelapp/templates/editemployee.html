@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit employee{% endblock %}
+
+{% block content %}
+
+<body style="background-color: antiquewhite;">
+  <div class="container">
+    <h2 style="margin-top:5%;text-align: center;">Edit Employee</h2><br>
+   <form method="post" action="/editemployee/{{emply.id}}" enctype="multipart/form">
+    {% csrf_token %}
+          <label>Name:</label>
+          <input type="text" name="name2" class='form-control' value="{{emply.name}}" ><br>
+          <label>Phone no:</label>
+          <input type="text" name="phone2" class='form-control' value="{{emply.phone}}"  ><br>
+          <label>Email Id:</label>
+          <input type="email" name="email2" class='form-control' value="{{emply.email}}" ><br>
+          <label>Address:</label>
+          <textarea name="address2" class='form-control' >{{emply.address}}</textarea><br>
+          <label>Company Name:</label>
+          <input type="text" name="comp2" value="{{emply.company_name}}" class='form-control'><br><br>
+            <button type="submit" class="btn btn-info w-100" >Submit</button>
+            <input type="button" value="previous page" onclick="javascript:history.go(-1);">
+</form>
+</div>
+<footer style="margin-top:35%" class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+      ><i class="fa fa-facebook "></i
+    ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+      ><i class="fa fa-twitter"></i
+    ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+      ><i class="fa fa-google"></i
+    ></a>
+
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+      ><i class="fa fa-instagram"></i
+    ></a>
+
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Email:
+    <a class="text-white" href="#">ABCcollege123@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</body>
+</html>
+{% endblock %}

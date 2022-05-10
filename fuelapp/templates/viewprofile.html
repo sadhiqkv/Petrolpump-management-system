@@ -1,0 +1,132 @@
+{% extends 'base2.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+{% load static %}
+<style>
+    body {
+    background: rgb(99, 39, 120)
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+</style>
+<body>
+    {% for i in pfs %}
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            {% if i.image == '/static/images/83.jpg' %}
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{% static 'images/83.jpg' %}"><span class="font-weight-bold">{{ user.username }}</span><span> </span></div>
+                {% else %}
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{ i.image.url }}"><span class="font-weight-bold">{{ user.username }}</span><span> </span></div>
+                {% endif %}
+                
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Name</label><input class="text-black-150" type="text" class="form-control"  value="{{ user.first_name }}"></div>
+                    <div class="col-md-6"><label class="labels">Surname</label><input class="text-black-150" type="text" class="form-control" value="{{ user.last_name }}" ></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Joined Date</label><input style="color: black;" type="datetime" class="form-control" value="{{ user.date_joined}}"></div>
+                    <div class="col-md-12"><label class="labels">Address</label><input style="color: black;" type="text" class="form-control" placeholder="enter address line 1" value="{{ i.place }}"></div>
+                    <div class="col-md-12"><label class="labels">Email ID</label><input style="color: black;" type="text" class="form-control"  value="{{ i.email}}"></div>
+                    <div class="col-md-12"><label class="labels">Phone no</label><input style="color: black;" type="number" class="form-control"  value="{{ i.phone_no}}"></div>
+                    <div class="col-md-12"><label class="labels">Company Name</label><input type="text" class="form-control" placeholder="education" value="{{ i.company.company}}"></div>
+                </div>
+                <div class="mt-5 text-center"><a href="{% url 'editprofilepage' i.id %}"><button class="btn btn-primary" type="button">Edit Profile</button></a></div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</div>
+</div>
+{% endfor %}
+<footer style="margin-top:20%" class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+        ><i class="fa fa-facebook "></i
+      ></a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
+        ><i class="fa fa-twitter"></i
+      ></a>
+  
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+        ><i class="fa fa-google"></i
+      ></a>
+  
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+        ><i class="fa fa-instagram"></i
+      ></a>
+  
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      Email:
+    <a class="text-white" href="#">Keralapetrolpump123@gmail.com</a><br>
+      Phone no:
+    <a class="text-white" href="#">+913466847767<br>+913456754524</a><br>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  </body>
+  </html>
+  {% endblock %}
